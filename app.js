@@ -12,6 +12,8 @@ mongoose.connect('mongodb://node-aaroza:'+
     '@node-aaroza-shard-00-00-mkjpe.mongodb.net:27017,node-aaroza-shard-00-01-mkjpe.mongodb.net:27017,node-aaroza-shard-00-02-mkjpe.mongodb.net:27017/test?ssl=true&replicaSet=node-aaroza-shard-0&authSource=admin&retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true 
     });
+
+mongoose.Promise = global.Promise;
     
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
